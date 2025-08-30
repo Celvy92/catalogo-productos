@@ -5,7 +5,7 @@
     "price": 1899,
     "category": "Lightsticks",
     "group": "BTS",
-    "image": "https://via.placeholder.com/600x400?text=BTS+ARMY+Bomb",
+    "image": "/img/products/bts-army-bomb.jpg",
     "rating": 4.8,
     "tags": ["oficial", "preventa"]
   },
@@ -15,7 +15,7 @@
     "price": 699,
     "category": "Álbumes",
     "group": "NewJeans",
-    "image": "https://via.placeholder.com/600x400?text=NewJeans+Get+Up",
+    "image": "/img/products/newjeans-get-up.jpg",
     "rating": 4.6,
     "tags": ["oferta"]
   },
@@ -25,7 +25,7 @@
     "price": 320,
     "category": "Photocards",
     "group": "Stray Kids",
-    "image": "https://via.placeholder.com/600x400?text=Stray+Kids+PCs",
+    "image": "/img/products/straykids-pcs.jpg",
     "rating": 4.4,
     "tags": ["fanmade"]
   }
