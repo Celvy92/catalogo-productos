@@ -1,0 +1,20 @@
+{
+  "name": "celba-server",
+  "version": "1.0.0",
+  "description": "Backend de CelBa-Store con Express",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Celeste Vianey Hernández Arauz",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
