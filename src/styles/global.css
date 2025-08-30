@@ -1,0 +1,190 @@
+/* 🌸 CelBa-Store — Estilo Pastel Rosas y Lilas */
+
+:root {
+  --maxw: 1080px;
+
+  /* 🎨 Paleta CelBa-Store */
+  --pink: #f8c8dc;    /* rosa pastel */
+  --pink-dark: #f19ac6;
+  --lilac: #d8b4f8;   /* lila pastel */
+  --lilac-dark: #c084fc;
+  --white: #ffffff;
+  --ink: #3a2c3f;     /* texto suave, no negro puro */
+  --bg: #fdfbff;      /* fondo clarito */
+  --line: #f0e7fa;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+/* 📦 Layout */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
+/* 🎀 Header */
+.header {
+  background: linear-gradient(90deg, var(--pink) 0%, var(--lilac) 100%);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.header-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.header a {
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+.header a:hover {
+  opacity: 0.8;
+}
+
+/* 💜 Brand */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.brand-badge {
+  background: var(--white);
+  color: var(--lilac-dark);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* 🛒 Tarjetas */
+.card {
+  background: var(--white);
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  padding: 14px;
+  text-align: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
+  background: var(--bg);
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin: 8px 0;
+}
+
+/* 🧁 Chips y etiquetas */
+.price {
+  font-weight: 800;
+  color: var(--lilac-dark);
+}
+
+.badge {
+  font-size: 12px;
+  padding: 4px 10px;
+  background: var(--pink);
+  border-radius: 999px;
+  border: 1px solid var(--pink-dark);
+  color: var(--ink);
+}
+
+.kchip {
+  font-size: 11px;
+  padding: 4px 9px;
+  border: 1px dashed var(--lilac-dark);
+  color: var(--lilac-dark);
+  border-radius: 999px;
+  background: #f8f3ff;
+}
+
+/* 🌸 Inputs */
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 2px solid var(--line);
+  background: var(--white);
+  font-family: inherit;
+  transition: border 0.2s;
+}
+.input:focus {
+  outline: none;
+  border-color: var(--lilac-dark);
+  box-shadow: 0 0 0 3px rgba(200,150,250,0.2);
+}
+
+/* 🌷 Botones */
+.btn-primary {
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: 2px solid var(--lilac-dark);
+  background: var(--lilac-dark);
+  color: var(--white);
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+.btn-primary:hover {
+  background: var(--lilac);
+  border-color: var(--lilac);
+  transform: scale(1.03);
+}
+
+/* 💖 Links */
+.link {
+  color: var(--pink-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
+
+/* 🌟 Utilidades */
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "cb001",
+    "name": "Lightstick Oficial — BTS ARMY Bomb SE",
+    "price": 1899,
+    "category": "Lightsticks",
+    "group": "BTS",
+    "image": "https://via.placeholder.com/600x400?text=BTS+ARMY+Bomb",
+    "rating": 4.8,
+    "tags": ["oficial", "preventa"]
+  },
+  {
+    "id": "cb002",
+    "name": "Álbum — NewJeans 'Get Up' (Bunny ver.)",
+    "price": 699,
+    "category": "Álbumes",
+    "group": "NewJeans",
+    "image": "https://via.placeholder.com/600x400?text=NewJeans+Get+Up",
+    "rating": 4.6,
+    "tags": ["oferta"]
+  },
+  {
+    "id": "cb003",
+    "name": "Photocards — Stray Kids (Set x10)",
+    "price": 320,
+    "category": "Photocards",
+    "group": "Stray Kids",
+    "image": "https://via.placeholder.com/600x400?text=Stray+Kids+PCs",
+    "rating": 4.4,
+    "tags": ["fanmade"]
+  }
+]
