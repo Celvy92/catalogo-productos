@@ -188,3 +188,29 @@ body {
   align-items: center;
   flex-wrap: wrap;
 }
+/* --- Manejo de errores / alertas --- */
+.alert {
+  padding: 10px 12px;
+  border-radius: 12px;
+  margin: 8px 0;
+  font-size: 0.95rem;
+}
+.alert-error {
+  background: #fde2e4; /* rosa suave */
+  color: #6a1a21;
+  border: 1px solid #f5b5bb;
+}
+.field-error {
+  color: #6a1a21;
+  font-size: 0.85rem;
+  margin: -6px 0 8px 2px;
+}
+.input-error {
+  border: 1px solid #f5b5bb !important;
+  background: #fff7f8;
+}
+.label {
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #5c4b63;
+}
