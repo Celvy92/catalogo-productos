@@ -1,6 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
+import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import ProductCard from "../components/ProductCard";
 import { apiGetProducts } from "../services/api";
+import useDebounce from "../hooks/useDebounce";
 
 export default function Catalog() {
   const [loading, setLoading] = useState(true);
@@ -8,6 +9,9 @@ export default function Catalog() {
   const [err, setErr] = useState("");
 
   const [q, setQ] = useState("");
+  const debouncedQ = useDebounce(q, 300);       // evita filtrar en cada tecla
+  const slowQ = useDeferredValue(debouncedQ);   // prioriza la UI fluida
+
   const [cat, setCat] = useState("Todas");
   const [group, setGroup] = useState("Todos");
   const [sort, setSort] = useState("relevance");
@@ -31,7 +35,7 @@ export default function Catalog() {
   );
 
   const filtered = useMemo(() => {
-    const t = q.toLowerCase();
+    const t = (slowQ || "").toLowerCase();
     let arr = list.filter((p) => {
       const matchesText =
         p.name.toLowerCase().includes(t) || p.group.toLowerCase().includes(t);
@@ -45,7 +49,7 @@ export default function Catalog() {
     else if (sort === "rating-desc") arr = [...arr].sort((a, b) => b.rating - a.rating);
 
     return arr;
-  }, [list, q, cat, group, sort]);
+  }, [list, slowQ, cat, group, sort]);
 
   return (
     <div className="container">

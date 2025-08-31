@@ -214,3 +214,13 @@ body {
   margin-bottom: 4px;
   color: #5c4b63;
 }
+.badge-pre {
+  background: #ffe3f1;
+  color: #7a2b5e;
+  border: 1px solid #f5c3df;
+}
+.badge-sale {
+  background: #e8ffef;
+  color: #1f6b3a;
+  border: 1px solid #b7e6c6;
+}

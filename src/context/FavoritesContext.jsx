@@ -1,35 +1,42 @@
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useContext, useEffect, useMemo, useState, useCallback } from "react";
 
 const FavoritesContext = createContext();
 
 export function FavoritesProvider({ children }) {
-  const [favoriteIds, setFavoriteIds] = useState(() => {
+  const [ids, setIds] = useState(() => {
     try {
-      const raw = localStorage.getItem("celba:favorites");
+      const raw = localStorage.getItem("celba:favs");
       return raw ? JSON.parse(raw) : [];
     } catch {
       return [];
     }
   });
 
+  // Persistir localStorage solo cuando cambie
   useEffect(() => {
-    localStorage.setItem("celba:favorites", JSON.stringify(favoriteIds));
-  }, [favoriteIds]);
+    localStorage.setItem("celba:favs", JSON.stringify(ids));
+  }, [ids]);
 
-  const toggleFavorite = (id) => {
-    setFavoriteIds((prev) =>
-      prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]
-    );
-  };
+  // Set para búsqueda O(1), memorizado
+  const idSet = useMemo(() => new Set(ids), [ids]);
+
+  const isFavorite = useCallback((id) => idSet.has(id), [idSet]);
+
+  const toggleFavorite = useCallback((id) => {
+    setIds((prev) => (prev.includes(id) ? prev.filter((x) => x !== id) : [...prev, id]));
+  }, []);
+
+  const clearFavorites = useCallback(() => setIds([]), []);
 
   const value = useMemo(
     () => ({
-      favoriteIds,
-      isFavorite: (id) => favoriteIds.includes(id),
+      ids,
+      count: ids.length,
+      isFavorite,
       toggleFavorite,
-      count: favoriteIds.length,
+      clearFavorites,
     }),
-    [favoriteIds]
+    [ids, isFavorite, toggleFavorite, clearFavorites]
   );
 
   return <FavoritesContext.Provider value={value}>{children}</FavoritesContext.Provider>;
